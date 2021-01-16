@@ -27,10 +27,10 @@ public class Nafuda {
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             
-            print(self.targetURL)
+//            print(self.targetURL)
             
             if let htmlData = String(data: data!, encoding: .utf8) {
-                print(htmlData)
+//                print(htmlData)
                 
                 if let title = htmlData.searchMatchBetween(from: "<title>", to: "</title>") {
                     //タイトルを返す

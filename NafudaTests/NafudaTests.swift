@@ -20,8 +20,8 @@ class NafudaTests: XCTestCase {
 
     func testExample() throws {
         
-        let title = Nafuda(link: "https://qiita.com/yum_fishing/items/db029c097197e6b27fba").getTitle(completion: { response in
-            print(response)
+        let _ = Nafuda(link: "https://github.com/p1atdev/Nafuda").getTitle(completion: { response in
+            print(response!)
         })
         
     }
