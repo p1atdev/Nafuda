@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Nafuda"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "This search web site's title"
   spec.description  = "TODO: write here"
   spec.homepage     = "https://github.com/p1atdev/Nafuda"
