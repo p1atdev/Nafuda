@@ -10,6 +10,7 @@
 		3AF5E60225B2EF850005F834 /* Nafuda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF5E5F825B2EF850005F834 /* Nafuda.framework */; };
 		3AF5E60725B2EF850005F834 /* NafudaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5E60625B2EF850005F834 /* NafudaTests.swift */; };
 		3AF5E60925B2EF850005F834 /* Nafuda.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AF5E5FB25B2EF850005F834 /* Nafuda.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AF5E61525B2EF8F0005F834 /* Nafuda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5E61425B2EF8F0005F834 /* Nafuda.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		3AF5E60125B2EF850005F834 /* NafudaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NafudaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF5E60625B2EF850005F834 /* NafudaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NafudaTests.swift; sourceTree = "<group>"; };
 		3AF5E60825B2EF850005F834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF5E61425B2EF8F0005F834 /* Nafuda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nafuda.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				3AF5E5FB25B2EF850005F834 /* Nafuda.h */,
+				3AF5E61425B2EF8F0005F834 /* Nafuda.swift */,
 				3AF5E5FC25B2EF850005F834 /* Info.plist */,
 			);
 			path = Nafuda;
@@ -147,6 +150,7 @@
 				TargetAttributes = {
 					3AF5E5F725B2EF850005F834 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					3AF5E60025B2EF850005F834 = {
 						CreatedOnToolsVersion = 12.3;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF5E61525B2EF8F0005F834 /* Nafuda.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		3AF5E60D25B2EF850005F834 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.p1atdev.Nafuda;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +372,7 @@
 		3AF5E60E25B2EF850005F834 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
@@ -389,6 +397,7 @@
 		3AF5E61025B2EF850005F834 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
 				INFOPLIST_FILE = NafudaTests/Info.plist;
@@ -407,6 +416,7 @@
 		3AF5E61125B2EF850005F834 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
 				INFOPLIST_FILE = NafudaTests/Info.plist;

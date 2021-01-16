@@ -19,8 +19,11 @@ class NafudaTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let title = Nafuda(link: "https://qiita.com/yum_fishing/items/db029c097197e6b27fba").getTitle(completion: { response in
+            print(response)
+        })
+        
     }
 
     func testPerformanceExample() throws {
