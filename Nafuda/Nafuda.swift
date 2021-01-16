@@ -16,7 +16,7 @@ public class Nafuda {
     var request: NSMutableURLRequest
     
     //サイトの名前を取得する
-    public func getTitle(completion: @escaping(String?) -> ()) {
+    public func getTitle(completion: @escaping(NafudaResponse) -> ()) {
         
         // セマフォの初期化
         let semaphore = DispatchSemaphore(value: 0)
@@ -27,18 +27,21 @@ public class Nafuda {
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             
-//            print(self.targetURL)
-            
-            if let htmlData = String(data: data!, encoding: .utf8) {
-//                print(htmlData)
+            if data != nil {
                 
-                if let title = htmlData.searchMatchBetween(from: "<title>", to: "</title>") {
-                    //タイトルを返す
-                    completion(title)
-                } else {
-                    //nilを返す
-                    completion(nil)
+                if let htmlData = String(data: data!, encoding: .utf8) {
+                    
+                    if let title = htmlData.searchMatchBetween(from: "<title>", to: "</title>") {
+                        //タイトルを返す
+                        completion(NafudaResponse(status: .success, title: title))
+                    } else {
+                        //nilを返す
+                        completion(NafudaResponse(status: .fail , title: nil))
+                    }
                 }
+            } else {
+                //nilを返す
+                completion(NafudaResponse(status: .error , title: nil))
             }
             
             // 処理終了でセマフォをインクリメント
@@ -65,23 +68,23 @@ public class Nafuda {
 }
 
 //返すやつ
-class NafudaResponse {
+public class NafudaResponse {
     
     //成功したかどうか
-    public let status: Status
+    public let status: NafudaResponseStatus
     
     public let title: String?
     
-    enum Status {
-        case success
-        case fail
-        case error
-    }
-    
-    public init(status: Status, title: String?) {
+    public init(status: NafudaResponseStatus, title: String?) {
         self.status = status
         self.title = title
     }
+}
+
+public enum NafudaResponseStatus {
+    case success
+    case fail
+    case error
 }
 
 //正規表現

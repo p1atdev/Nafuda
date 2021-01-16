@@ -20,8 +20,17 @@ class NafudaTests: XCTestCase {
 
     func testExample() throws {
         
-        let _ = Nafuda(link: "https://github.com/p1atdev/Nafuda").getTitle(completion: { response in
-            print(response!)
+        let _ = Nafuda(link: "https://githfhaheouwafnaw.awboeufbwa").getTitle(completion: { response in
+            switch response.status {
+            case .success:
+                print(response.title!)
+                
+            case .fail:
+                print("No title at the site.")
+                
+            case .error:
+                print("Other error was occaused.")
+            }
         })
         
     }
