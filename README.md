@@ -18,8 +18,18 @@ pod 'Nafuda'
 ### 使い方
 ```Swift
 
-Nafuda(link: "https://github.com/p1atdev/Nafuda").getTitle(completion: { title in
-    print(title!)   //-> "p1atdev/Nafuda · GitHub"
+Nafuda(link: "https://github.com/p1atdev/Nafuda").getTitle(completion: { response in
+    switch response.status {
+    case .success:
+        print("Success! The title of the site is \(response.title)")
+        
+    case .fail:
+        print("Faild. The site may not have a title.")
+        
+    case .error:    //TODO: I'll change the name of this one later.
+        print("Faild. The site could not be accessed. The site may not exist.)
+    
+    }
 })
 
 ```
