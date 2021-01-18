@@ -20,13 +20,26 @@ class NafudaTests: XCTestCase {
 
     func testExample() throws {
         
-        let _ = Nafuda(link: "https://githfhaheouwafnaw.awboeufbwa").getTitle(completion: { response in
+        let _ = Nafuda(link: "https://qiita.com/risuke/items/cdd6a75f236faae3ce6b").getTitle(completion: { response in
             switch response.status {
             case .success:
-                print(response.title!)
+                print("サイト名", response.data!)
                 
             case .fail:
                 print("No title at the site.")
+                
+            case .error:
+                print("Other error was occaused.")
+            }
+        })
+        
+        Nafuda(link: "https://www.google.com/wafafwef").getFavicon(completion: { response in
+            switch response.status {
+            case .success:
+                print(response.data!)
+                
+            case .fail:
+                print("No favicon at the site.")
                 
             case .error:
                 print("Other error was occaused.")
